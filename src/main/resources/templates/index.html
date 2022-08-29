@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}"/>
+</head>
+<body>
+<div th:replace="/header::header">...</div>
+<h1>Главная</h1>
+<ul>
+    <li sec:authorize="isAnonymous()"><a class="nav-link" href="/login">Login</a></li>
+    <li sec:authorize="isAuthenticated()"><a class="nav-link" href="/logout">Logout</a></li>
+    <li sec:authorize="isAuthenticated()">Wellcome, <span sec:authentication="principal.username"></span></li>
+</ul>
+<footer th:replace="/footer::footer">...</footer>
+</body>
+</html>

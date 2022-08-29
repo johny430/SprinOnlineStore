@@ -1,0 +1,55 @@
+html,
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+form{
+    width: 40%;
+    border: 10px solid yellow;
+    border-radius: 10px;
+    padding: 1.5%;
+    margin: 0 auto;
+}
+
+form h1{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 45px;
+}
+
+form input{
+    all: unset;
+    border: 1px solid black;
+    display: block;
+    width: 70%;
+    margin: 10px auto 0;
+    height: 40px;
+    padding: 5px;
+    box-shadow: none;
+}
+
+form button{
+    display: block;
+    width: 72%;
+    margin: 10px auto 0;
+    height: 50px;
+}
+
+form p{
+    font-size: 24px;
+    text-align: center;
+}
+
+form p a{
+    text-decoration: none;
+     color: darkorange;
+    margin-left: 5px;
+}
+
+.error{
+    margin: 0 auto;
+    color: red;
+}

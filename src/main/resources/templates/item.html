@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/item.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}"/>
+    <title th:text="${item.getName()}">Title</title>
+</head>
+<body>
+<div th:replace="/header::header">...</div>
+<div class="name">
+    <h1 th:text="${item.getName()}"></h1>
+</div>
+<div class="center">
+    <div class="center-right_column">
+        <img th:src="@{'/image/'+${item.getImageUrl()}}" alt="Фото предмета">
+    </div>
+    <div class="center-left_column">
+        <div class="center-left_column-content">
+            <p>Цена 1000 ₽</p>
+        </div>
+    </div>
+</div>
+<div class="description">
+    <p class="description-header">Описание:</p>
+    <p class="description-content" th:text="${item.getDescription()}"></p>
+</div>
+<footer th:replace="/footer::footer">...</footer>
+</body>
+</html>

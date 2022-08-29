@@ -1,0 +1,15 @@
+<div th:fragment="header" class="header">
+    <div class="header-left">
+        <p>Каталог</p>
+    </div>
+    <div class="header-right"  sec:authorize="isAnonymous()">
+        <a class="header-right-text" href="/login">Вход</a>
+        <a href="/registration">Регистрация</a>
+    </div>
+    <div class="header-right-user_logged" sec:authorize="isAuthenticated()">
+        <img th:src="@{'/image/user.png'}" alt="user">
+        <form action="your_url" method="post">
+            <button type="submit" name="your_name" value="your_value" class="btn-link">Выйти</button>
+        </form>
+    </div>
+</div>

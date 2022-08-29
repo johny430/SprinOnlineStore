@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}"/>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+</head>
+<body>
+<div th:fragment="header" class="header">
+    <div class="header-left">
+        <p>Каталог</p>
+    </div>
+</div>
+<form class="form-signin" method="post" th:action="@{/registration}" th:object="${userForm}">
+    <h1 class="form-signin-heading">Регистрация</h1>
+    <input th:style="${#fields.hasErrors('username') ? 'border-color:red' : 'border-color:black'}" type="text" th:field="*{username}" placeholder="Имя Пользователя" >
+    <p class="error" th:if="${#fields.hasErrors('username')}">Имя пользователя должен находиться в диапазоне от 2 до 30</p>
+    <input th:style="${#fields.hasErrors('password') ? 'border-color:red' : 'border-color:black'}" type="password" th:field="*{password}" placeholder="Пароль">
+    <p class="error" th:if="${#fields.hasErrors('password')}">Пароль должен находиться в диапазоне от 2 до 30</p>
+    <input type="hidden" id="csrf" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+    <p>Есть Аккаунта?<a href="/login">Войти</a></p>
+</form>
+<div th:insert="footer.html">...</div>
+</body>
+</html>
