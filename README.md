@@ -5,9 +5,6 @@
 а также удобную админ-панель где можно в режиме реального времени добавлять категории, товары и параметры товаров для каждой категории и систему для отображения акций и прочей коммерческой информации.
 
 Использует следующий стек технологий:
--java 17
-
--spring boot, security, data jpa, thyemelaf, querydsl, hibernate.
-
--html, css, js.
- 
+* java 17;
+- spring boot, security, data jpa, thyemelaf, querydsl, hibernate;
++ html, css, js;
