@@ -6,6 +6,8 @@
 
 Использует следующий стек технологий:
 -java 17
+
 -spring boot, security, data jpa, thyemelaf, querydsl, hibernate.
+
 -html, css, js.
  
