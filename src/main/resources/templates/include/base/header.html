@@ -1,0 +1,27 @@
+<div th:fragment="header" class="header">
+    <div class="header-left">
+        <a class="header-left-link" th:href="@{'/items'}">Каталог</a>
+    </div>
+    <div class="form-search">
+        <form method="GET" th:action="@{'/items '}">
+            <input type="text" name="q" id="q"/>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ui-f2">
+                    <path fill="currentColor" d="M8.284,3.597c2.841,0,5.146,2.304,5.146,5.145s-2.305,5.145-5.146,5.145S3.14,11.581,3.14,8.742
+                    C3.14,5.902,5.443,3.597,8.284,3.597L8.284,3.597z M8.284,0.456C3.71,0.456,0,4.166,0,8.742c0,4.574,3.71,8.283,8.284,8.283
+                    c2.041,0,3.907-0.737,5.353-1.961l6.411,6.41c0.519,0.519,1.364,0.519,1.882,0l0,0c0.519-0.518,0.519-1.365,0-1.882l-6.559-6.559
+                    c0.76-1.252,1.197-2.721,1.197-4.292C16.568,4.166,12.859,0.456,8.284,0.456z">
+                    </path>
+                </svg>
+            </button>
+        </form>
+    </div>
+    <div class="header-right"  sec:authorize="isAnonymous()">
+        <a class="header-right-login" href="/login">Вход</a>
+        <a href="/registration">Регистрация</a>
+    </div>
+    <div class="header-right-user_logged" sec:authorize="isAuthenticated()">
+        <img th:src="@{'/image/user.png'}" alt="user">
+        <a href="/logout">Выйти</a>
+    </div>
+</div>

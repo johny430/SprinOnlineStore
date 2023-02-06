@@ -1,5 +1,7 @@
 package com.example.Shop.entity;
 
+import com.example.Shop.service.CategoryService;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,10 +12,25 @@ public class ItemEntity {
     private Long id;
     private String name;
     private String description;
+    private int price;
     private String imageUrl;
+    @ManyToOne
+    private ItemTypeEntity category;
+
+    public ItemTypeEntity getCategory() {
+        return category;
+    }
 
     public ItemEntity(){
 
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public Long getId() {
